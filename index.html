@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Weather App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About this App </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Delhi</a></li>
+                            <li><a class="dropdown-item" href="#">Seattle</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Bangalore </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="city" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Temperatures</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="heading1"><small 
+                                    class="text-body-secondary fw-light">°C</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Temperature is <span id="Temp"></span></li>
+                                <li>Min Temperature is <span id="Min_temp"></span></li>
+                                <li>Max Temperature is<span id="Max_temp" ></span></li>
+                            </ul>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Humidity Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="heading2"><small
+                                    class="text-body-secondary fw-light">%</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Cloud PCT is <span id="Cloud_pct"></span></li>
+                                <li>Feels Like <span id="Feels_like"></span></li>
+                                <li>Humidity is <span id="Humidity"></span></li>
+                            </ul>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Wind Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="heading3"><small
+                                    class="text-body-secondary fw-light">km/hr</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Speed is <span id="Wind_speed"></span></li>
+                                <li>Wind Degrees is<span id="Wind_degrees"></span></li>
+                                <li>Sunrise time is<span id="Sunrise"></span></li>
+                                <!-- <li>Sunset<span id="Sunset"></span></li> -->
+                            </ul>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4">Weather of other common places </h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%;"></th>
+                            <th style="width: 22%;">Cloud_pct</th>
+                            <th style="width: 22%;">Temp</th>
+                            <th style="width: 22%;">Feels_like </th>
+                            <th style="width: 22%;">Humidity </th>
+                            <th style="width: 22%;">Min_temp </th>
+                            <th style="width: 22%;">Max_temp </th>
+                            <th style="width: 22%;">Wind_speed</th>
+                            <th style="width: 22%;">Wind_degrees</th>
+                            <th style="width: 22%;">Sunrise </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Shanghai</th>
+                            <td id="Cloud_pct1"></td>
+                            <td id="Temp1"></td>
+                            <td id="Feels_like1"></td>
+                            <td id="Humidity1"></td>
+                            <td id="Min_temp1"></td>
+                            <td id="Max_temp1" ></td>
+                            <td id="Wind_speed1"></td>
+                            <td id="Wind_degrees1"></td>
+                            <td id="Sunrise1"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Boston</th>
+                            <td id="Cloud_pct2"></td>
+                            <td id="Temp2"></td>
+                            <td id="Feels_like2"></td>
+                            <td id="Humidity2"></td>
+                            <td id="Min_temp2"></td>
+                            <td id="Max_temp2" ></td>
+                            <td id="Wind_speed2"></td>
+                            <td id="Wind_degrees2"></td>
+                            <td id="Sunrise2"></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Lucknow</th>
+                            <td id="Cloud_pct3"></td>
+                            <td id="Temp3"></td>
+                            <td id="Feels_like3"></td>
+                            <td id="Humidity3"></td>
+                            <td id="Min_temp3"></td>
+                            <td id="Max_temp3" ></td>
+                            <td id="Wind_speed3"></td>
+                            <td id="Wind_degrees3"></td>
+                            <td id="Sunrise3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Kolkata</th>
+                            <td id="Cloud_pct4"></td>
+                            <td id="Temp4"></td>
+                            <td id="Feels_like4"></td>
+                            <td id="Humidity4"></td>
+                            <td id="Min_temp4"></td>
+                            <td id="Max_temp4" ></td>
+                            <td id="Wind_speed4"></td>
+                            <td id="Wind_degrees4"></td>
+                            <td id="Sunrise4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
